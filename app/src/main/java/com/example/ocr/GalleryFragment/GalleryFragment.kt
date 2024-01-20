@@ -1,47 +1,33 @@
 package com.example.ocr.GalleryFragment
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.database.Cursor
+
+
+import android.content.Intent
 import android.os.Bundle
-import android.os.Environment
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.amazonaws.auth.BasicAWSCredentials
 import com.amazonaws.services.textract.AmazonTextractClient
-import com.amazonaws.services.textract.model.StartDocumentAnalysisRequest
 import com.example.ocr.databinding.FragmentGalleryBinding
-import android.util.Base64
 import androidx.lifecycle.lifecycleScope
 import com.amazonaws.services.textract.model.DetectDocumentTextRequest
 import com.amazonaws.services.textract.model.Document
 import com.bumptech.glide.Glide
+import com.example.ocr.ChatScreen.ChatActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.nio.ByteBuffer
 
-/**
- * A simple [Fragment] subclass.
- * Use the [GalleryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class GalleryFragment : Fragment() {
 
     private lateinit var binding: FragmentGalleryBinding
-    val credential=BasicAWSCredentials("your_access_key","your_secret_key")
+    private val credential=BasicAWSCredentials("your_access_key","your_secret_key")
 
-    val texttract = AmazonTextractClient(credential)
+    private val texttract = AmazonTextractClient(credential)
 
     val galleryLauncher=registerForActivityResult(ActivityResultContracts.GetContent()){
         lifecycleScope.launch(Dispatchers.IO) {
@@ -61,7 +47,11 @@ class GalleryFragment : Fragment() {
 
                 println(request)
                 val response=texttract.detectDocumentText(request)
-                println(response)
+
+                val intent=Intent(requireContext(),ChatActivity(response.toString())::class.java)
+                startActivity(intent)
+
+
 
 
             }catch (e:Exception){
@@ -76,7 +66,7 @@ class GalleryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding=FragmentGalleryBinding.inflate(layoutInflater)
 
