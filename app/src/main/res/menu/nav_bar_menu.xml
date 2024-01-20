@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:id="@+id/bottom_nav_home"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Scans"/>
+
+    <item android:id="@+id/bottom_nav_listings"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Documents"/>
+
+    <item android:id="@+id/bottom_nav_filter"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Pdfs"/>
+
+
+</menu>
