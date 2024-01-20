@@ -39,7 +39,7 @@ import java.nio.ByteBuffer
 class GalleryFragment : Fragment() {
 
     private lateinit var binding: FragmentGalleryBinding
-    val credential=BasicAWSCredentials("AKIAXHXRS4F57R7AM6NO","s5pIyHieLnI7j7QzPw/ndLdCKCSYFkiIDrJYpEix")
+    val credential=BasicAWSCredentials("your_access_key","your_secret_key")
 
     val texttract = AmazonTextractClient(credential)
 
