@@ -2,7 +2,6 @@ package com.example.ocr.ChatScreen
 
 import com.google.gson.annotations.SerializedName
 
-
 data class responseData(
 
     @SerializedName("id")
@@ -28,21 +27,12 @@ data class responseData(
 )
 
 
-data class Message(
-    @SerializedName("role")
-    val role: String,
-
-    @SerializedName("content")
-    val content: String
-)
-
-
 data class Choice(
     @SerializedName("index")
     val index: Int,
 
     @SerializedName("message")
-    val message: Message,
+    val message: messageData,
 
     @SerializedName("logprobs")
     val logprobs: Any?, // Adjust the type if logprobs have a specific structure
@@ -61,3 +51,4 @@ data class Usage(
     @SerializedName("total_tokens")
     val totalTokens: Int
 )
+
