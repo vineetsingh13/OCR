@@ -27,9 +27,6 @@
             android:name=".CameraActivity.CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".CameraActivity"
-            android:exported="false" />
-        <activity
             android:name=".SignIn.SignInActivity"
             android:exported="false" />
         <activity
