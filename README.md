@@ -19,6 +19,7 @@ This OCR Chat App allows users to extract text from images using AWS Textract an
 ## Note
 - add your own aws and openAI key in the constants.kt file
 - in the loginActivity.kt make sure you change the code according to your firebase implementations
+- The document extraction part is left will add it soon
 
 ## Screenshots
 ![WhatsApp Image 2024-03-01 at 23 12 12_3d2257fe](https://github.com/vineetsingh13/OCR/assets/80053859/3258e109-4bc9-4058-ba07-e69a8a8af7b2)
