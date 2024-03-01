@@ -2,12 +2,16 @@ package com.example.ocr.ImageFragment
 
 
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
@@ -109,6 +113,8 @@ class ImageFragment : Fragment() {
 
 
                 withContext(Dispatchers.Main){
+                    copyToClipboard(requireContext(),answer)
+                    Toast.makeText(requireContext(),"text copied to clipboard", Toast.LENGTH_SHORT).show()
                     loading.isDismiss()
                     val intent=Intent(requireContext(),ChatActivity()::class.java)
                     intent.putExtra("extractedText",answer)
@@ -118,6 +124,12 @@ class ImageFragment : Fragment() {
         }
     }
 
+
+    fun copyToClipboard(context: Context, text: String) {
+        val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clipData = ClipData.newPlainText("text", text)
+        clipboardManager.setPrimaryClip(clipData)
+    }
 
     override fun onStart() {
         super.onStart()
