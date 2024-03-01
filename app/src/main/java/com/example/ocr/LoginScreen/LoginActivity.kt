@@ -32,14 +32,11 @@ class LoginActivity : AppCompatActivity() {
 
         binding.LoginButton.setOnClickListener {
 
-//            val email=binding.EmailInputText.text.toString()
-//            val pwd=binding.PasswordInputText.text.toString()
-//
-//            login(email,pwd)
+            val email=binding.EmailInputText.text.toString()
+            val pwd=binding.PasswordInputText.text.toString()
 
-            val i=Intent(this@LoginActivity, MainActivity::class.java)
-            startActivity(i)
-            finish()
+            login(email,pwd)
+
         }
     }
 
