@@ -6,4 +6,5 @@
     <color name="nav_bar_color">#0091C8</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="button_color">#FFEF2D</color>
 </resources>

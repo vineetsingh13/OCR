@@ -4,7 +4,7 @@ package com.example.ocr
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.ocr.GalleryFragment.GalleryFragment
+import com.example.ocr.ImageFragment.ImageFragment
 import com.example.ocr.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,12 +17,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        replaceFragment(GalleryFragment())
+        replaceFragment(ImageFragment())
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
 
-                R.id.bottom_nav_home->{
-                    replaceFragment(GalleryFragment())
+                R.id.bottom_nav_image->{
+                    replaceFragment(ImageFragment())
                 }
             }
             true
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.bottomNavigationView.menu.findItem(R.id.bottom_nav_home).isChecked=true
+        binding.bottomNavigationView.menu.findItem(R.id.bottom_nav_image).isChecked=true
     }
     private fun replaceFragment(fragment: Fragment){
 

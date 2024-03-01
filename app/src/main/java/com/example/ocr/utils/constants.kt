@@ -1,5 +1,7 @@
 package com.example.ocr.utils
 
-val openAI_key="your_key"
-
-val url= "https://api.openai.com/v1/chat/"
+//add your credentials and urls here
+val oa="dummy"
+val az="dummy"
+val url="dummy"
+val az_secret="dummy"

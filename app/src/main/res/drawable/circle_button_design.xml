@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="@color/nav_bar_color" />
+            <corners
+                android:topLeftRadius="222dp"
+                android:topRightRadius="222dp"
+                android:bottomLeftRadius="222dp"
+                android:bottomRightRadius="222dp"
+                />
+        </shape>
+    </item>
+</layer-list>

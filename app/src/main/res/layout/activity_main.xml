@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/gradient_background"
+    android:animateLayoutChanges="true">
 
 
     <RelativeLayout
@@ -16,45 +17,27 @@
         android:background="@drawable/toolbar_gradient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="34dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/baseline_search_24"
-            android:backgroundTint="@color/white" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:animateLayoutChanges="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="39dp"
             android:layout_marginEnd="45dp"
-            android:layout_toStartOf="@+id/imageButton"
-            android:layout_toEndOf="@+id/imageButton2"
             android:fontFamily="@font/averia_sans_libre_light"
-
-
+            android:layout_centerInParent="true"
             android:text="@string/app_name"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="35sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="34dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/baseline_settings_24"
-            android:padding="22dp" />
     </RelativeLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="58dp"
@@ -69,7 +52,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         app:menu="@menu/nav_bar_menu"
-        app:labelVisibilityMode="selected"/>
+        app:labelVisibilityMode="selected"
+        android:animateLayoutChanges="true"/>
 
 
     <LinearLayout
@@ -78,17 +62,126 @@
         android:background="@drawable/storage_drawable"
         android:layout_marginTop="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView">
+        app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView"
+        android:animateLayoutChanges="true">
 
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:animateLayoutChanges="true"
             />
     </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--tools:context=".MainActivity"-->
+<!--android:background="@drawable/gradient_background"-->
+<!--android:animateLayoutChanges="true">-->
+
+
+<!--<RelativeLayout-->
+<!--    android:id="@+id/relativeLayout"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="?android:attr/actionBarSize"-->
+<!--    android:layout_margin="15dp"-->
+<!--    android:background="@drawable/toolbar_gradient"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    android:animateLayoutChanges="true">-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton2"-->
+<!--        android:layout_width="34dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginTop="6dp"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:background="@drawable/baseline_search_24"-->
+<!--        android:backgroundTint="@color/white" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginStart="39dp"-->
+<!--        android:layout_marginEnd="45dp"-->
+<!--        android:layout_toStartOf="@+id/imageButton"-->
+<!--        android:layout_toEndOf="@+id/imageButton2"-->
+<!--        android:fontFamily="@font/averia_sans_libre_light"-->
+
+
+<!--        android:text="@string/app_name"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="35sp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton"-->
+<!--        android:layout_width="34dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginTop="6dp"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:background="@drawable/baseline_settings_24"-->
+<!--        android:padding="22dp" />-->
+<!--</RelativeLayout>-->
+
+
+<!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--    android:id="@+id/bottomNavigationView"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="58dp"-->
+<!--    style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"-->
+<!--    android:layout_margin="15dp"-->
+<!--    android:layout_marginTop="28dp"-->
+<!--    android:background="@drawable/navbar_background"-->
+<!--    android:elevation="16dp"-->
+<!--    app:itemIconTint="@color/white"-->
+<!--    app:itemTextColor="@color/white"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/relativeLayout"-->
+<!--    app:menu="@menu/nav_bar_menu"-->
+<!--    app:labelVisibilityMode="selected"-->
+<!--    android:animateLayoutChanges="true"/>-->
+
+
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    android:background="@drawable/storage_drawable"-->
+<!--    android:layout_marginTop="25dp"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView"-->
+<!--    android:animateLayoutChanges="true">-->
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fragment_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:animateLayoutChanges="true"-->
+<!--        />-->
+<!--</LinearLayout>-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+
